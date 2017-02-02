@@ -9,13 +9,21 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
+@Inheritance(strategy=InheritanceType.JOINED)
 @Table(name="employee")
 public class Employee {
  
@@ -25,6 +33,7 @@ public class Employee {
  private Department department;
  private Set<Project> projects = new HashSet<Project>(
 			0);
+ private EmployeeIdCard employeeIdCard;
 @Id
 @Column(name="ID",unique=true,nullable=false)
 @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -63,6 +72,14 @@ public Set<Project> getProjects() {
 }
 public void setProjects(Set<Project> projects) {
 	this.projects = projects;
+}
+@OneToOne(fetch=FetchType.LAZY,mappedBy="employee")
+@JsonIgnore
+public EmployeeIdCard getEmployeeIdCard() {
+	return employeeIdCard;
+}
+public void setEmployeeIdCard(EmployeeIdCard employeeIdCard) {
+	this.employeeIdCard = employeeIdCard;
 }
  
  

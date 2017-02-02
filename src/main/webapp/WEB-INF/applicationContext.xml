@@ -44,6 +44,12 @@
 		<value>com.abc.st.model.Department</value>
 		<value>com.abc.st.model.Employee</value>
 		<value>com.abc.st.model.Project</value>
+		<value>com.abc.st.model.EmployeeIdCard</value>
+		<value>com.abc.st.model.RegularEmployee</value>
+		<value>com.abc.st.model.ContractEmployee</value>
+		
+		
+		 
 		
 		
 	</list>
