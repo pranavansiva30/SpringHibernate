@@ -42,6 +42,9 @@
 	<list>
 	    <!-- department module -->
 		<value>com.abc.st.model.Department</value>
+		<value>com.abc.st.model.Employee</value>
+		<value>com.abc.st.model.Project</value>
+		
 		
 	</list>
     </property>

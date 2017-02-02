@@ -25,6 +25,7 @@ $(document).ready(function(){
             success:  function (response) {
            	 if(response.status=="SUCCESS"){
            	alert(response.status);
+           	alert(response.result[0].name);
             }
             }
            	 ,
