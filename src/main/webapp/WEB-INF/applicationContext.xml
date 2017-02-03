@@ -23,8 +23,8 @@
 <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  
 <property name="driverClassName" value="com.mysql.jdbc.Driver" />  
 <property name="url" value="jdbc:mysql://LocalHost:3306/springtest" />  
-<property name="username" value="dba" />  
-<property name="password" value="sql" />  
+<property name="username" value="root" />  
+<property name="password" value="" />  
 </bean>  
   <bean id="mysessionFactory"  class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">  
         <property name="dataSource" ref="dataSource"></property>  
